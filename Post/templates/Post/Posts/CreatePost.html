@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% load blog_tags %}
+{% block title %} My blog {% endblock %}
+
+{% block content %}
+
+{% if tag %}
+  <h2>Posts tagged with "{{ tag.name }}"</h2>
+{% endif %}
+
+
+
+    <h1>New post</h1>
+     <form action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button action="." type="POST" class="save btn btn-default" enctype="multipart/form-data" style="    margin-bottom: 15px;">Save</button>
+    </form>
+
+<!--
+     <form action="." method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Create my account"></p>
+  </form>
+
+-->
+{% endblock %}
+ 
+	
+
+
