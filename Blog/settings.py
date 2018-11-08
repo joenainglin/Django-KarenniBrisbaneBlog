@@ -28,12 +28,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
+#SECRET_KEY = 'v47!o*60a)#w*)mfqim02k0-x@ilf46b%ssk9!%$6tpe&h=w2i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = False
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://demo-karenniblog.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'https://demo-karenniblog.herokuapp.com/', '.herokuapp.com' ]
 
 
 # Application definition
@@ -110,9 +111,8 @@ DATABASES = {
 #DATABASES = {
  #   'default': {
   #      'ENGINE': 'django.db.backends.postgresql',
-   ###   'PASSWORD': 'Pa$$w0rd',
-      #  'HOST': '127.0.0.1',
-       # 'PORT':'5432',
+   #   'PASSWORD': 'Pa$$w0rd',
+    ## 'PORT':'5432',
     #}
 #}
 
@@ -172,7 +172,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'Post/static'), )
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
+STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static")
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
