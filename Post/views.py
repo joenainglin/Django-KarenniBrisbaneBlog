@@ -21,7 +21,7 @@ from django.utils.text import slugify
 
 # Create your views here.
 def Post_list(request, tag_slug=None): 
-    object_list = Post.published.all() 
+    object_list = Post.published.all()
     
     tag = None 
  
@@ -41,7 +41,9 @@ def Post_list(request, tag_slug=None):
         posts = paginator.page(paginator.num_pages) 
     return render(request, 'Post/Posts/HomePopularPostList.html', {'page': page, 
                                                    'posts': posts, 
-                                                   'tag': tag}) 
+                                                   'tag': tag,
+                                       
+                                                  }) 
 
 #class PostListView(ListView):
 #	queryset = Post.published.all()

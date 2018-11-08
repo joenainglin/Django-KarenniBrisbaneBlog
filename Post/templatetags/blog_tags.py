@@ -18,8 +18,15 @@ def category():
 
 @register.inclusion_tag('Post/Posts/HomeLatestPostList.html')
 def show_latest_posts(count=5):
-    latest_posts = Post.published.order_by('-publish')[:4]
+    latest_posts = Post.published.order_by('-publish')[1:4]
     return {'latest_posts': latest_posts}
+
+
+@register.inclusion_tag('Post/Posts/HomeMainPost.html')
+def show_latest_posts_for_main():
+    Homelatest_posts = Post.published.order_by('-publish')[0]
+    return {'Homelatest_posts': Homelatest_posts}
+
 
 
 @register.simple_tag
