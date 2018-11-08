@@ -31,7 +31,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://karenniblog.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'https://demo-karenniblog.herokuapp.com/']
 
 
 # Application definition
@@ -102,17 +102,16 @@ WSGI_APPLICATION = 'Blog.wsgi.application'
     #}
 #}
 
+#
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog',
-        'USER': 'postgres',
-        'PASSWORD': 'Pa$$w0rd',
-        'HOST': '127.0.0.1',
-        'PORT':'5432',
-    }
-}
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql',
+   ###   'PASSWORD': 'Pa$$w0rd',
+      #  'HOST': '127.0.0.1',
+       # 'PORT':'5432',
+    #}
+#}
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)
