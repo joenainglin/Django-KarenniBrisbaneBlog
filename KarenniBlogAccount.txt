@@ -1,0 +1,10 @@
+Email ------
+
+Gmail:
+username: karenniblog@gmail.com
+passowrd: joenainglin1999
+
+
+Heroku:
+username: karenniblog@gmail.com
+password: Pa$$w0rd1999
