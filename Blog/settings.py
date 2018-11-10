@@ -31,7 +31,7 @@ SECRET_KEY = config('SECRET_KEY')
 #SECRET_KEY = 'v47!o*60a)#w*)mfqim02k0-x@ilf46b%ssk9!%$6tpe&h=w2i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['demo-karenniblog.herokuapp.com', '127.0.0.1'  ]
@@ -172,7 +172,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'Post/static'), )
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
