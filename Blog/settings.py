@@ -14,6 +14,8 @@ import os
 
 from decouple import config
 
+import dj_database_url
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -34,7 +36,13 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 
-ALLOWED_HOSTS = [ '*' ]
+DATABASES = {
+    'default': 'postgres://eqhdbyqwvhzacz:28eafdfb798dfcb6a079547b85dba1b424a49bd2d0dfcb77521215a22d206494@ec2-23-23-101-25.compute-1.amazonaws.com:5432/d3sflal2o13ccj'
+
+}
+
+
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -74,6 +82,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'Blog.urls'
 
@@ -116,7 +126,7 @@ DATABASES = {
     #}
 #}
 
-import dj_database_url
+
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
