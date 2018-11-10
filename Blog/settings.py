@@ -34,7 +34,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://demo-karenniblog.herokuapp.com/', '.herokuapp.com' ]
+ALLOWED_HOSTS = ['demo-karenniblog.herokuapp.com' ]
 
 
 # Application definition
