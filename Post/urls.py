@@ -7,7 +7,7 @@ from .feeds import LatestPostsFeed
 app_name = 'Post'
 urlpatterns = [
 		# map to Post list view
-		url(r'^', views.Post_list, name = 'Post_list'),
+		url(r'demo-karenniblog.herokuapp.com', views.Post_list, name = 'Post_list'),
 		#url(r'^$', views.PostListView.as_view(), name = 'Post_list'),
 		url(r'^tag/(?P<tag_slug>[-\w]+)/$',views.Post_list, name='Post_list_by_tag'),
 		# map to post detail view
