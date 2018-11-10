@@ -174,7 +174,7 @@ STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'Post/static'), )
 
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -208,3 +208,4 @@ REST_FRAMEWORK = {
 
 
 
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
