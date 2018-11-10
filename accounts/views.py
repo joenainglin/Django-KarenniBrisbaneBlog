@@ -62,7 +62,7 @@ def register(request):
             # Create the user profile
             profile = Profile.objects.create(user=new_user)
             
-            return redirect( '/Post/')
+            return redirect( '/')
            # return render(request,
                         #  'accounts/dashboard.html',
                          # {'new_user': new_user})
