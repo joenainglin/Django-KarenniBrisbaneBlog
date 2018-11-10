@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # direct to Post url route
-    url(r'^$', include('Post.urls')),
+    url(r'', include('Post.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^social-auth/', include('social_django.urls', namespace='social')),
     url(r'^api/', include('Post.api.urls', namespace='api')),
