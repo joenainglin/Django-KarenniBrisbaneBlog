@@ -24,7 +24,7 @@ def show_latest_posts(count=5):
 
 @register.inclusion_tag('Post/Posts/HomeMainPost.html')
 def show_latest_posts_for_main():
-    Homelatest_posts = Post.published.order_by('-publish')[0]
+    Homelatest_posts = Post.published.order_by('-publish').first()
     return {'Homelatest_posts': Homelatest_posts}
 
 
