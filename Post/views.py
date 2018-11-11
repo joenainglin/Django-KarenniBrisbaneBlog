@@ -160,7 +160,7 @@ def post_new(request):
           new_item.save()
         
           messages.success(request, 'Post added successfully')
-          return redirect( '/Post/')
+          return redirect( '/')
           #form = CreatePostForm()
         else:
           messages.error(request, 'Error adding new post')
