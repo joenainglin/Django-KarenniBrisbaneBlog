@@ -8,3 +8,8 @@ passowrd: joenainglin1999
 Heroku:
 username: karenniblog@gmail.com
 password: Pa$$w0rd1999
+
+
+Amazon s3:
+username: karenniblog@gmail.com
+password: Pa$$w0rd1999

@@ -8,18 +8,21 @@
 
 
 	<div class="row">
-  <div class="col-12">
-<div class="blog-post">
-            <h2 class="blog-post-title">{{ post.title }}</h2>
-            <p class="blog-post-meta">{{ post.publish }} by <a href="#">{{ post.author }} </a></p>
-          
-
-            <figure class="figure">
-  <img src="{{ post.image.url }}" class="img-fluid" alt="Responsive image">
-  <figcaption class="figure-caption">A caption for the above image.</figcaption>
-</figure>
+    <div class="col-12">
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ post.title }}</h2>
+        <p class="blog-post-meta">{{ post.publish }} by <a href="#">{{ post.author }} </a></p>
+        <figure class="figure">
+          <img src="{{ post.image.url }}" class="img-fluid" alt="Responsive image">
+          <figcaption class="figure-caption">A caption for the above image.</figcaption>
+        </figure>
         
-            <p>{{ post.body   }}</p>
+</div>
+</div>
+        <div class="col-12">
+          <p>{{ post.body   }}</p>
+        </div>
+    <div class="col-12">
 
                    <p class="tags">
               Tags:
@@ -31,7 +34,7 @@
               {% endfor %}
             </p>
             <p><a href="{% url 'Post:Post_share' post.id %}"> Share this post</a></p>
-          </div>
+      
 
 
 
@@ -122,13 +125,22 @@
 
 
 		{% for comment in comments %}
-  <div class="comment">
-    <p class="info">
-      Comment {{ forloop.counter }} by {{ comment.name }}
-      {{ comment.created }}
-    </p>
-    {{ comment.body|linebreaks }}
+
+
+    <div class="card">
+  <div class="card-header">
+     {{ comment.name }}
   </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{ comment.body|linebreaks }}</p>
+      
+      <footer class="blockquote-footer"><cite title="Source Title">{{ comment.created }}</cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+<br>
 {% empty %}
   <p>There are no comments yet.</p>
 {% endfor %}
@@ -137,6 +149,9 @@
 {% if new_comment %}
   <h2>Your comment has been added.</h2>
 {% else %}
+
+<br>
+<div>
   <h2>Add a new comment</h2>
   <form action="." method="post">
     {{ comment_form|crispy  }}
@@ -145,7 +160,7 @@
   </form>
 {% endif %}
 
-
+</div>
 </div>
 
 

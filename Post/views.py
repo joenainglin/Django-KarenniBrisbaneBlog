@@ -19,6 +19,8 @@ from django.core.files.base import ContentFile
 from django.utils.text import slugify
 
 
+
+
 # Create your views here.
 def Post_list(request, tag_slug=None): 
     object_list = Post.published.all()
