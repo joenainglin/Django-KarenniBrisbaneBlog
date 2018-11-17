@@ -42,7 +42,7 @@ DEBUG = True
 #}
 
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '.pythonanywhere.com', 'karenniblog.pythonanywhere.com']
 
 
 # Application definition
