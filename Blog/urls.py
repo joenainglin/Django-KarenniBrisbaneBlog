@@ -32,5 +32,4 @@ urlpatterns = [
 # media files during development (that is when the DEBUG setting is 
 # set to True).
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

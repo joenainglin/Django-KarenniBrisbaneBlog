@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "karenniblog-222621",
+  "private_key_id": "d3fd87886fa020cec2b2a0f5e81010d42f1df151",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6J0+JvDWAWnbl\n7k2PAuDjYs8fdMS/KX6ICQeIxk7c49FTtKLy0k4CvcBOE+Rbg4MNQQ2LDmmT8o+p\ncUjP53snDM0qsz8wK2+QWCA8g8q7gzEi2sAMH70+oZ84LOPHT8cjF4ZGj2xNBNs1\nUKU0IC26jw+Zr9z1HVytIiHL7ewomzXD2YGZ5+AFgSYgoVkSoZpcY7C9Ya1zRO5Y\nC9+aF5jGau8yGH5dDJluoRQK9vkPvoTAkjP27MwsbDdp1bHFJAEMjy2WldF6qMX9\noinZ/FjbxPB51/9AqQEk5jfIAezzrifDR0p2KftXjUYS6QVzVvZZvlseai6j3CwR\n54Qe2raBAgMBAAECggEAIwavB1RHv9MlwI1GgCRzQq2umbVbqLlqwrdqOMDRiWv/\nUM/yAhzyiz7/XmGNS+/Smo2VOgc389vFzsTPRblBOZ+FwiVQfCSMHR2L0T8eCAq/\nFdcRoCZfshdwkT4XDMNUzaRJQmENqG9DvMQkFYsBd7Mf5RPLUD6aV8ROliO6FgiN\nWcawxHL4F2P5hU527IhJZDU0KRR28Jd97bLEY3GSylvZ/bxisD8YI1qgpld5eJST\nt68/VariyzeUFRLVkzowNt1N7pnF7R3LqrIwi/BNcFb4QTSIaq+AdmBtoiwe3k/0\nl5VcgEqNZ7fS2mUaJpCk62exMCL32wmkP04TuwwH3QKBgQD6QieycXovYLFG+aAP\nG5TbH49AAhuJsauBIOmwDxCwZheO7AmH4R0yuMBQwrG8w+02hihbxA0m80KpZ2c2\nlt7smWHI4L2naYCkuhFQWk6+X0+Vnm6mCwcfhYMpETnHwkMd9mqvYcWJrW9Tf7cw\nBlrdRZaIrdbX+AbwxAqljIoBjQKBgQC+bKXjAHhuv5oMH6apEAvEhsKmy7ao7qKL\njseAygetGhiQu0NZBRz08f6DH5PnvmB+SbbpUpCUq4cwC56lp6ufCLE9qYjUEzpp\n8h8AHtxPuGZ/vT7+uKrqByDU/5UxjU6EAonSjZhIkwgxy7sheOfIzDqzmUcqBAnF\nHKTSN3PZxQKBgQCZGyYsPs6w86ghsxDgjVBJqwo579AnMqKpkphF1UGxmhQppXDD\nR89UO8G05xhUU03qQLOqSMx/Gu6as59qv2zNNZ2khxKgvKQuo4N6NHXedHM9Jzus\nrCyEdWtkEZzXAJuNVje46skuzQPCAu3xHMI0g6FwJ2K8qIqefGHDHLNF9QKBgGZ4\nyxAMGcLnInuxsJq7wslgB3GAoGvp9tiI3f0FOvpA18VSsFxALyP08ZQYMxx7SyvK\neT63qowGffox1o6oWud64v4etD4DluSaYWpMMRxJTAcjjLnAIGFNsrJMUznWI9FQ\nGGCQx8kOLlO1oZ7SlFBu7ovlSPFoOOW0k1F4e8RNAoGATkVMVObKoQGYFfXl3qZK\ndfQI5hCCSDMYBSQwmdMND/MyanBp/fPuZ7qhKMXm3zIUSB57voN9vTrqXn7EGIE5\n8/srxA58RH3YahovemEZwfz6oNEaeFp1S2z0DKm0I0YMsDHrXddScfQ3SYwaFOmu\n1uYpMXZGlSm8WsBXPvt2qBI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "karenniblog@karenniblog-222621.iam.gserviceaccount.com",
+  "client_id": "108627142946975154217",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/karenniblog%40karenniblog-222621.iam.gserviceaccount.com"
+}

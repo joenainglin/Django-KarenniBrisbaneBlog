@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-from decouple import config
+#from decouple import config
 
-import dj_database_url
+#import dj_database_url
 
 
 
@@ -33,16 +33,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v47!o*60a)#w*)mfqim02k0-x@ilf46b%ssk9!%$6tpe&h=w2i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
-DATABASES = {
-    'default': 'postgres://eqhdbyqwvhzacz:28eafdfb798dfcb6a079547b85dba1b424a49bd2d0dfcb77521215a22d206494@ec2-23-23-101-25.compute-1.amazonaws.com:5432/d3sflal2o13ccj'
+#DATABASES = {
+#    'default': 'postgres://eqhdbyqwvhzacz:28eafdfb798dfcb6a079547b85dba1b424a49bd2d0dfcb77521215a22d206494@ec2-23-23-101-25.compute-1.amazonaws.com:5432/d3sflal2o13ccj'
 
-}
+#}
 
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -127,9 +127,9 @@ DATABASES = {
 #}
 
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-DATABASES['default']['CONN_MAX_AGE'] = 500
+#db_from_env = dj_database_url.config()
+#DATABASES['default'].update(db_from_env)
+#DATABASES['default']['CONN_MAX_AGE'] = 500
 
 #HAYSTACK_CONNECTIONS = {
 
