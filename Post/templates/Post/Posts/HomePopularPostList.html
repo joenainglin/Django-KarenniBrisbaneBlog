@@ -5,10 +5,8 @@
 
 {% block content %}
 
-{% if tag %}
-  <h2>Posts tagged with "{{ tag.name }}"</h2>
-{% endif %}
 
+{% load crispy_forms_tags %}
 
 
 
@@ -20,8 +18,10 @@
 
 
 
-	
-  <h3>Latest posts</h3>
+	<h3 class="pb-3 mb-4 font-italic border-bottom">
+            Latest posts
+          </h3>
+
 
   <!-- this used the tag in blog_tag 
     tagigng show latest post -->
@@ -29,36 +29,35 @@
   {% show_latest_posts 3 %}
       
 
-<h3>Popular posts</h3>  
+  <h3 class="pb-3 mb-4 font-italic border-bottom">
+            Popular posts
+          </h3>
 <div class="row mb-2">
 
-        {% get_most_commented_posts as most_commented_posts %}
+          {% get_most_commented_posts as most_commented_posts %}
 
         {% for post in most_commented_posts %}
 
-        <div class="col-md-6"> <!-- start of lsit -->
+        <div class="col-md-6">
           <div class="card flex-md-row mb-4 shadow-sm h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">{{post.category}}</strong>
-              <h5 class="mb-0">
+              <strong class="d-inline-block mb-2 text-primary">{{post.category.name}}</strong>
+              <h3 class="mb-0">
                 <a class="text-dark" href="{{ post.get_absolute_url}}">{{post.title}}</a>
-
-              </h5>
-             <!-- <div class="mb-1 text-muted">{{ post.publish }}  by {{ post.author }}</div>     -->          
+              </h3>
+              <div class="mb-1 text-muted">{{post.created}}</div>
               <p class="card-text mb-auto">{{ post.body|markdown|truncatewords_html:12 }}</p>
               <a href="{{ post.get_absolute_url}}">Continue reading</a>
             </div>
-            <img class="card-img-right flex-auto d-none d-lg-block"  alt="Thumbnail [200x248]" style="width: 200px; height: 248px;" src="{{post.image.url}}" data-holder-rendered="true">
+             <img class="card-img-right flex-auto d-none d-lg-block"  alt="Thumbnail [200x248]" style="width: 200px; height: 248px;" src="{{post.image.url}}" data-holder-rendered="true">
           </div>
-        </div> <!-- end of list -->
-
- {% endfor %}
-  
-</div>  
-
+        </div>
+         {% endfor %}
+        
+</div>
 
 
-
+</div>
 
 
 

@@ -3,7 +3,7 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-
+{% load blog_tags %}
  {% if request.user.is_authenticated %}
 
 <section class="jumbotron text-center">
@@ -16,8 +16,8 @@
           <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
           <p>
            
-            <a href="{% url 'edit' %}" class="btn btn-secondary my-2">Edit Profile</a>
-            <a href="{% url 'logout' %}" class="btn btn-secondary my-2">Log Out</a>
+           <a href="{% url 'accounts:edit' %}" class="btn btn-secondary my-2">Edit Profile</a>
+            <a href="{% url 'accounts:logout' %}" class="btn btn-secondary my-2">Log Out</a> 
           </p>
            <a href="{% url 'Post:post_new' %}" class="btn btn-primary my-2"><h4>Post</h4   ></a>
         </div>
@@ -25,9 +25,9 @@
 
 
 <h3>Published Post</h3>
-<div class="album py-5 bg-light">
 
-        <div class="container">
+
+ 
 
           <div class="row">
        {% for post in UserPost %}
@@ -36,8 +36,10 @@
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" data-src="" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="{{post.image.url}}" data-holder-rendered="true">
                 <div class="card-body">
+                      <strong class="d-inline-block mb-2 text-primary">{{post.category.name}}</strong>
                   <h5>{{post.title}}</h5>
-                  <p class="card-text">{{post.body|truncatewords_html:20 }}</p>
+
+                  <p class="card-text">{{post.body|markdown |truncatewords_html:20 }}</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <!-- must used assign model name -->
@@ -46,7 +48,7 @@
                       <br>
                      
                       </a>
-                     <a  href="{% url 'Post:post_edit' post.slug %}">
+               <!--      <a  href="{% url 'Post:post_edit' post.slug %}"> -->
                       <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                       </a>
                     </div>
@@ -63,8 +65,8 @@
             </div>
        <!-- end of a post -->
  {% endfor %}
-          </div>
-        </div>
+   
+
       </div>
 
 

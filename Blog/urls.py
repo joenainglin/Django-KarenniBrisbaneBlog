@@ -18,14 +18,21 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+from filebrowser.sites import site
+
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^admin/filebrowser/', site.urls),
+
 
     # direct to Post url route
     url(r'', include('Post.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^social-auth/', include('social_django.urls', namespace='social')),
     url(r'^api/', include('Post.api.urls', namespace='api')),
+    url(r'^tinymce/', include('tinymce.urls')),
     
 ]
 # the Django development server will be in charge of serving the 

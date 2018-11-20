@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import *
 # Register your models here.
-
+from .forms import *
 
 #class PostPictureInline(admin.TabularInline):
  #   model = PostPicture
@@ -25,4 +25,5 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Category)
 

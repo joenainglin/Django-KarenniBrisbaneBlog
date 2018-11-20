@@ -7,20 +7,27 @@
 
 
 
+
+
+
+
 	<div class="row">
     <div class="col-12">
       <div class="blog-post">
         <h2 class="blog-post-title">{{ post.title }}</h2>
         <p class="blog-post-meta">{{ post.publish }} by <a href="#">{{ post.author }} </a></p>
-        <figure class="figure">
-          <img src="{{ post.image.url }}" class="img-fluid" alt="Responsive image">
-          <figcaption class="figure-caption">A caption for the above image.</figcaption>
-        </figure>
+
+
+
+<div class="card mb-3">
+  <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+</div>
+
         
 </div>
 </div>
         <div class="col-12">
-          <p>{{ post.body   }}</p>
+          <p>{{ post.body | markdown  }}</p>
         </div>
     <div class="col-12">
 
@@ -37,6 +44,52 @@
       
 
 
+
+
+    {% with comments.count as total_comments %}
+      <h2>
+        {{ total_comments }} comment{{ total_comments|pluralize }}
+      </h2>
+    {% endwith %}
+
+
+
+    {% for comment in comments %}
+
+
+    <div class="card">
+  <div class="card-header">
+     {{ comment.name }}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{ comment.body|linebreaks }}</p>
+      
+      <footer class="blockquote-footer"><cite title="Source Title">{{ comment.created }}</cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+<br>
+{% empty %}
+  <p>There are no comments yet.</p>
+{% endfor %}
+
+
+{% if new_comment %}
+  <h2>Your comment has been added.</h2>
+{% else %}
+
+<br>
+<div>
+  <h2>Add a new comment</h2>
+ 
+  <form action="." method="post">
+    {{ comment_form|crispy  }}
+    {% csrf_token %}
+       <button type="submit" class="btn btn-success" style="    margin-bottom: 15px;">Add comment</button>
+  </form>
+{% endif %}
 
 
 <!--
@@ -87,10 +140,13 @@
 -->
 
   {% for post in similar_posts %}
-
+<hr>
 <div class="blog-post">
             <h2 class="blog-post-title">{{ post.title }}</h2>
             <p class="blog-post-meta">{{ post.publish }} by <a href="#">{{ post.author }} </a></p>
+            <div class="card mb-3">
+  <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+</div>
 
             <p>{{ post.body|markdown }}</p>
                    <p class="tags">
@@ -105,26 +161,18 @@
             <p><a href="{% url 'Post:Post_share' post.id %}"> Share this post</a></p>
           </div>
 
-    {% endfor %}
 
 
 
+    {% with comments.count as total_comments %}
+      <h2>
+        {{ total_comments }} comment{{ total_comments|pluralize }}
+      </h2>
+    {% endwith %}
 
 
 
-
-
-
-
-		{% with comments.count as total_comments %}
-		  <h2>
-		    {{ total_comments }} comment{{ total_comments|pluralize }}
-		  </h2>
-		{% endwith %}
-
-
-
-		{% for comment in comments %}
+    {% for comment in comments %}
 
 
     <div class="card">
@@ -153,12 +201,23 @@
 <br>
 <div>
   <h2>Add a new comment</h2>
+ 
   <form action="." method="post">
     {{ comment_form|crispy  }}
     {% csrf_token %}
        <button type="submit" class="btn btn-success" style="    margin-bottom: 15px;">Add comment</button>
   </form>
 {% endif %}
+
+    {% endfor %}
+
+
+
+
+
+
+
+
 
 </div>
 </div>

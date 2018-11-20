@@ -9,7 +9,9 @@ urlpatterns = [
 		# map to Post list view
 		url(r'^$', views.Post_list, name = 'Post_list'),
 		#url(r'^$', views.PostListView.as_view(), name = 'Post_list'),
-		url(r'^tag/(?P<tag_slug>[-\w]+)/$',views.Post_list, name='Post_list_by_tag'),
+		url(r'^tag/(?P<tag_slug>[-\w]+)/$',views.Post_list_by_tag, name='Post_list_by_tag'),
+		# category 
+		url(r'^category/(?P<category_name>[-\w]+)/$',views.Post_list_by_category, name='Post_list_by_category'),
 		# map to post detail view
 		url(r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<post>[-\w]+)/$',
 			views.Post_detail, name = 'Post_detail'),

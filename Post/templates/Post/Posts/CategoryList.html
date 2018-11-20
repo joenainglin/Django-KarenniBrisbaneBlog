@@ -1,0 +1,10 @@
+{% load blog_tags %}
+
+<div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+                {% for eachcategory in category %}
+          <a class="p-2 text-muted" href="{% url 'Post:Post_list_by_category' eachcategory.name %}">{{eachcategory.name}}</a>
+          {% endfor %}
+
+        </nav>
+      </div>

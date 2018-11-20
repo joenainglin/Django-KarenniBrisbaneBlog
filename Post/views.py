@@ -21,8 +21,31 @@ from django.utils.text import slugify
 
 
 
-# Create your views here.
 def Post_list(request, tag_slug=None): 
+    object_list = Post.published.all()
+    
+ 
+    #paginator = Paginator(object_list, 4) # 3 posts in each page 
+    #page = request.GET.get('page') 
+    #try: 
+        #posts = paginator.page(page) 
+    #except PageNotAnInteger: 
+        # If page is not an integer deliver the first page 
+        #posts = paginator.page(1) 
+    #except EmptyPage: 
+        # If page is out of range deliver last page of results 
+        #posts = paginator.page(paginator.num_pages) 
+
+    return render(request, 'Post/Posts/HomePopularPostList.html', {#'page': page, 
+                                                   #'posts': posts, 
+                                                  
+                                                   'object_list': object_list,
+                                                  
+                                       
+                                                  }) 
+
+# post with similar tag
+def Post_list_by_tag(request, tag_slug=None): 
     object_list = Post.published.all()
     
     tag = None 
@@ -42,13 +65,32 @@ def Post_list(request, tag_slug=None):
         # If page is out of range deliver last page of results 
         #posts = paginator.page(paginator.num_pages) 
 
-    return render(request, 'Post/Posts/HomePopularPostList.html', {#'page': page, 
+    return render(request, 'Post/Posts/SimilarTag.html', {#'page': page, 
                                                    #'posts': posts, 
                                                    'tag': tag,
                                                    'object_list': object_list,
+                                                  
                                        
                                                   }) 
 
+
+# post with similar category
+def Post_list_by_category(request, category_name): 
+    
+    object_list = Post.published.all()
+    object_list_one = Post.published.all()
+    categorys = get_object_or_404(Category, name=category_name) 
+    object_list = object_list.filter(category=categorys)[1:]
+    object_list_one = object_list_one.filter(category=categorys).first()
+
+
+    return render(request, 'Post/Posts/EachCategoryPage.html', {
+                                                   'categorys': categorys,
+                                                   'object_list': object_list,
+                                                   'object_list_one':object_list_one
+                                                  
+                                       
+                                                  }) 
 #class PostListView(ListView):
 #	queryset = Post.published.all()
 #	context_object_name = 'posts'

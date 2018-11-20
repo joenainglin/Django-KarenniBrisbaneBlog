@@ -1,5 +1,5 @@
 from django import template
-from ..models import Post
+from ..models import *
 from django.utils.safestring import mark_safe
 import markdown
 from django.db.models import Count
@@ -11,9 +11,10 @@ def total_posts():
     return Post.published.count()
 
 
-@register.simple_tag
-def category():
-    return Post.filter.category()
+@register.inclusion_tag('Post/Posts/CategoryList.html')
+def show_category():
+    category = Category.objects.all()
+    return {'category':category}
 
 
 @register.inclusion_tag('Post/Posts/HomeLatestPostList.html')
@@ -26,7 +27,6 @@ def show_latest_posts(count=5):
 def show_latest_posts_for_main():
     Homelatest_posts = Post.published.order_by('-publish').first()
     return {'Homelatest_posts': Homelatest_posts}
-
 
 
 @register.simple_tag
