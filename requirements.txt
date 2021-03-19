@@ -103,7 +103,7 @@ django-suit-redactor==0.0.4
 django-taggit==0.23.0
 django-taggit-serializer==0.1.7
 django-tinymce4-lite==1.7.3
-djangorestframework==3.9.0
+djangorestframework==3.11.2
 docutils==0.14
 elasticsearch==6.3.0
 elasticsearch-dsl==6.2.1
