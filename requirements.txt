@@ -132,7 +132,7 @@ pathlib==1.0.1
 pefile==2018.8.8
 Pillow==5.1.0
 pipenv==2018.7.1
-protobuf==3.6.1
+protobuf==3.18.3
 psycopg2==2.7.4
 psycopg2-binary==2.7.5
 pyasn1==0.4.4
